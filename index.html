@@ -17,51 +17,43 @@
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+      background: linear-gradient(135deg, #dce9f8, #b0d0f0);
       height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
+      color: #000;
     }
 
     .card {
       border: none;
       border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
       transition: all 0.3s ease-in-out;
       max-width: 420px;
+      background: #ffffff;
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
     }
 
     .card-body {
       text-align: center;
       padding: 40px;
-      background: #fff;
       border-radius: 20px;
-    }
-
-    .profile-img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 20px;
-      border: 3px solid #2196f3;
     }
 
     .name {
       font-size: 1.8rem;
       font-weight: 600;
-      color: #212121;
+      color: #004aad;
     }
 
     .title {
       font-size: 1.1rem;
-      color: #757575;
+      color: #1a1a1a;
       margin-bottom: 25px;
     }
 
@@ -72,27 +64,44 @@
 
     .info p {
       margin: 10px 0;
-      color: #424242;
+      color: #000;
       font-size: 1rem;
       display: flex;
       align-items: center;
     }
 
     .info i {
-      color: #1976d2;
+      color: #004aad;
       margin-right: 12px;
       font-size: 1.2rem;
     }
 
-    .social a {
+    a {
+      color: #004aad;
       text-decoration: none;
-      color: #1976d2;
-      font-weight: 500;
       transition: color 0.3s;
     }
 
-    .social a:hover {
-      color: #0d47a1;
+    a:hover {
+      color: #002e70;
+      text-decoration: underline;
+    }
+
+    .save-contact {
+      display: inline-block;
+      margin-top: 25px;
+      background-color: #004aad;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .save-contact:hover {
+      background-color: #004aad;
+      transform: scale(1.05);
     }
   </style>
 </head>
@@ -100,28 +109,24 @@
 
   <div class="card">
     <div class="card-body">
-      <!-- Optional Profile Image -->
-      <!-- <img src="profile.jpg" alt="Karthik.P" class="profile-img"> -->
-
       <h2 class="name">Karthik.P</h2>
       <p class="title">Entrepreneur</p>
 
       <div class="info">
-        <p><i class="bi bi-envelope-fill"></i> karthe85@gmail.com</p>
-        <p><i class="bi bi-telephone-fill"></i> +91 88070 06714</p>
-        <p><i class="bi bi-telephone-fill"></i> +91 88255 82232</p>
-        <p><i class="bi bi-facebook"></i> Karthik Purushothaman</p>
-        <p class="social">
-          <i class="bi bi-instagram"></i>
-          <a href="https://www.instagram.com/karthik.purush/" target="_blank">
-            Instagram: @karthik.purush
-          </a>
-        </p>
+        <p><i class="bi bi-envelope-fill"></i> <a href="mailto:karthe85@gmail.com">karthe85@gmail.com</a></p>
+        <p><i class="bi bi-telephone-fill"></i> <a href="tel:+918807006714">+91 88070 06714</a></p>
+        <p><i class="bi bi-telephone-fill"></i> <a href="tel:+918825582232">+91 88255 82232</a></p>
+        <p><i class="bi bi-facebook"></i> <a href="https://www.facebook.com/karthik.purushothaman" target="_blank">Karthik Purushothaman</a></p>
+        <p><i class="bi bi-instagram"></i> <a href="https://www.instagram.com/karthik.purush/" target="_blank">@karthik.purush</a></p>
       </div>
+
+      <!-- Save Contact Button -->
+      <a href="karthik.vcf" class="save-contact" download>
+        <i class="bi bi-person-plus-fill"></i> Save Contact
+      </a>
     </div>
   </div>
 
-  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
