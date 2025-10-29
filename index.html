@@ -5,10 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Karthik.P - Visiting Card</title>
 
-  <!-- Bootstrap CSS -->
+  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-  <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
 
   <style>
@@ -22,7 +20,7 @@
       margin: 80px auto;
       border-radius: 20px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-      background: #ffffff;
+      background: #fff;
     }
     .card-body {
       text-align: center;
@@ -40,9 +38,6 @@
     a:hover {
       color: #007bff;
     }
-    .btn-vcf {
-      margin-top: 15px;
-    }
   </style>
 </head>
 <body>
@@ -57,9 +52,34 @@
       <p><i class="bi bi-facebook icon"></i><a href="https://facebook.com/KarthikPurushothaman" target="_blank">Karthik Purushothaman</a></p>
       <p><i class="bi bi-instagram icon"></i><a href="https://www.instagram.com/karthik.purush/" target="_blank">Purusothaman Karthik</a></p>
 
-      <!-- vCard download button -->
-      <a href="karthik.vcf" class="btn btn-outline-dark btn-vcf" download>📇 Save Contact</a>
+      <a id="saveContactBtn" class="btn btn-outline-dark mt-3">📇 Save Contact</a>
     </div>
   </div>
+
+  <script>
+    document.getElementById("saveContactBtn").addEventListener("click", function () {
+      const vcardData = `BEGIN:VCARD
+VERSION:3.0
+N:Karthik;P;;;
+FN:Karthik P
+ORG:Entrepreneur
+EMAIL;TYPE=INTERNET:karthe85@gmail.com
+TEL;TYPE=CELL:+918807006714
+TEL;TYPE=CELL:+918825582232
+URL:https://www.instagram.com/karthik.purush/
+END:VCARD`;
+
+      const blob = new Blob([vcardData], { type: "text/vcard" });
+      const url = URL.createObjectURL(blob);
+
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Karthik_P.vcf";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    });
+  </script>
 </body>
 </html>
